@@ -57,8 +57,10 @@
     <string name="migration_cling_description" msgid="2752413805582227644">"要從舊的主螢幕匯入圖示和資料夾嗎？"</string>
     <string name="migration_cling_copy_apps" msgid="946331230090919440">"複製圖示"</string>
     <string name="migration_cling_use_default" msgid="2626475813981258626">"重新開始"</string>
-    <string name="workspace_cling_longpress_title" msgid="9173998993909018310">"桌布、小工具和設定"</string>
-    <string name="workspace_cling_longpress_description" msgid="4119994475505235248">"輕觸並按住背景即可自訂"</string>
+    <string name="android_x86_intro" msgid="9173998993909018310">"Android-x86 是一個由志願者所維護的開放原始碼計劃。我們希望收集一些匿名資料以改善計劃。"</string>
+    <string name="android_x86_analytics" msgid="4119994475505235248">"我同意提供以下匿名資訊："</string>
+    <string name="hw_info">"硬體資訊"</string>
+    <string name="apps_usage">"應用程式資訊"</string>
     <string name="workspace_cling_longpress_dismiss" msgid="368660286867640874">"知道了"</string>
     <string name="folder_opened" msgid="94695026776264709">"資料夾已開啟 (<xliff:g id="WIDTH">%1$d</xliff:g> x <xliff:g id="HEIGHT">%2$d</xliff:g>)"</string>
     <string name="folder_tap_to_close" msgid="1884479294466410023">"輕觸即可關閉資料夾"</string>

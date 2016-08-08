@@ -137,10 +137,13 @@
     <string name="migration_cling_copy_apps">COPY ICONS</string>
     <!-- The description of the button to use the default launcher layout [CHAR_LIMIT=30] -->
     <string name="migration_cling_use_default">START FRESH</string>
-    <!-- The title text for workspace longpress action [CHAR_LIMIT=40] -->
-    <string name="workspace_cling_longpress_title">Wallpapers, widgets, &amp; settings</string>
-    <!-- The description of how to use the workspace [CHAR_LIMIT=70] -->
-    <string name="workspace_cling_longpress_description">Touch &amp; hold background to customize</string>
+    <!-- The Android-x86 project introduction [CHAR_LIMIT=140] -->
+    <string name="android_x86_intro">Android-x86 is an open source project maintained by volunteers. To improve the project, we\'d like to collect some anonymous data from you.</string>
+    <!-- The description of anonymous data collection [CHAR_LIMIT=70] -->
+    <string name="android_x86_analytics">I agree to send the anonymous data:</string>
+    <!-- The description of the checkbox to agree [CHAR_LIMIT=30] -->
+    <string name="hw_info">Hardware information</string>
+    <string name="apps_usage">Apps usage</string>
     <!-- The description of the button to dismiss the cling [CHAR_LIMIT=30] -->
     <string name="workspace_cling_longpress_dismiss">GOT IT</string>
 

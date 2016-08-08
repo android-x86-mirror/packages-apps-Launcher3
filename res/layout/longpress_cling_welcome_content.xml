@@ -23,16 +23,37 @@
         android:fontFamily="sans-serif-medium"
         android:paddingLeft="36dp"
         android:paddingRight="36dp"
-        android:text="@string/workspace_cling_longpress_title"
+        android:text="@string/android_x86_intro"
         android:textColor="#E1000000"
-        android:textSize="20sp" />
+        android:textSize="18sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingLeft="36dp"
         android:paddingRight="36dp"
-        android:text="@string/workspace_cling_longpress_description"
+        android:text="@string/android_x86_analytics"
+        android:textColor="#99000000"
+        android:textSize="16sp" />
+
+    <CheckBox
+        android:id="@+id/collect_hw_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="32dp"
+        android:paddingLeft="4dp"
+        android:text="@string/hw_info"
+        android:textColor="#99000000"
+        android:textSize="16sp" />
+
+    <CheckBox
+        android:id="@+id/collect_apps_usage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:paddingLeft="4dp"
+        android:text="@string/apps_usage"
         android:textColor="#99000000"
         android:textSize="16sp" />
 
@@ -43,7 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end"
         android:layout_marginRight="12dp"
-        android:layout_marginTop="27dp"
+        android:layout_marginTop="6dp"
         android:fontFamily="sans-serif-medium"
         android:paddingLeft="24dp"
         android:paddingRight="24dp"

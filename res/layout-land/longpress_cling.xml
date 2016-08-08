@@ -15,7 +15,7 @@
 
     <FrameLayout
         android:id="@+id/cling_content"
-        android:layout_width="360dp"
+        android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/cling_bg" />

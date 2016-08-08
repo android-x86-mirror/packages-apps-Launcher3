@@ -48,6 +48,7 @@ LOCAL_PACKAGE_NAME := Launcher3
 LOCAL_PRIVILEGED_MODULE := true
 #LOCAL_CERTIFICATE := shared
 
+LOCAL_REQUIRED_MODULES := AnalyticsService HardwareCollector
 LOCAL_OVERRIDES_PACKAGES := Home Launcher2
 
 include $(BUILD_PACKAGE)

@@ -34,6 +34,8 @@ import android.view.View.OnLongClickListener;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.view.accessibility.AccessibilityManager;
+import android.widget.CheckBox;
+import java.lang.reflect.Method;
 
 import com.android.launcher3.util.Thunk;
 
@@ -48,6 +50,11 @@ class LauncherClings implements OnClickListener {
 
     // New Secure Setting in L
     private static final String SKIP_FIRST_USE_HINTS = "skip_first_use_hints";
+
+    private static final String PROPERTY_HW_STATISTICS = "persist.sys.hw_statistics";
+    private static final String PROPERTY_APPS_STATISTICS = "persist.sys.apps_statistics";
+    private CheckBox mCollectHwInfo;
+    private CheckBox mCollectAppsUsage;
 
     @Thunk Launcher mLauncher;
     private LayoutInflater mInflater;
@@ -137,6 +144,10 @@ class LauncherClings implements OnClickListener {
         mInflater.inflate(showWelcome ? R.layout.longpress_cling_welcome_content
                 : R.layout.longpress_cling_content, content);
         content.findViewById(R.id.cling_dismiss_longpress_info).setOnClickListener(this);
+        mCollectHwInfo = (CheckBox) content.findViewById(R.id.collect_hw_info);
+        mCollectAppsUsage = (CheckBox) content.findViewById(R.id.collect_apps_usage);
+        mCollectHwInfo.setChecked(true);
+        mCollectAppsUsage.setChecked(true);
 
         if (TAG_CROP_TOP_AND_SIDES.equals(content.getTag())) {
             Drawable bg = new BorderCropDrawable(mLauncher.getResources().getDrawable(R.drawable.cling_bg),
@@ -210,6 +221,13 @@ class LauncherClings implements OnClickListener {
             } else {
                 cling.animate().alpha(0).setDuration(duration).withEndAction(cleanUpClingCb);
             }
+            try {
+                Class<?> c = Class.forName("android.os.SystemProperties");
+                Method m = c.getMethod("set", String.class, String.class);
+                m.invoke(null, PROPERTY_HW_STATISTICS, Boolean.toString(mCollectHwInfo.isChecked()));
+                m.invoke(null, PROPERTY_APPS_STATISTICS, Boolean.toString(mCollectAppsUsage.isChecked()));
+            } catch (Exception e) {
+            }
         }
     }
 
@@ -247,6 +265,14 @@ class LauncherClings implements OnClickListener {
     }
 
     public boolean shouldShowFirstRunOrMigrationClings() {
+        try {
+            Class<?> c = Class.forName("android.os.SystemProperties");
+            Method m = c.getMethod("get", String.class, String.class);
+            if (((String)m.invoke(null, PROPERTY_HW_STATISTICS, "")).isEmpty()) {
+                return true;
+            }
+        } catch (Exception e) {
+        }
         SharedPreferences sharedPrefs = mLauncher.getSharedPrefs();
         return areClingsEnabled() &&
             !sharedPrefs.getBoolean(WORKSPACE_CLING_DISMISSED_KEY, false) &&
